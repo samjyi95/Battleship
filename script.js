@@ -91,7 +91,7 @@ function playersLife(board, playerHealth) {
 
 
 
-
+//figureItOutNerd allows the computer to choose from my board
 var figureItOutNerd = function (wholeBoard, randomValue) {
     var boardTile = wholeBoard[randomValue];
     var isTileOccupied = boardTile.style.backgroundColor === 'red' || boardTile.style.backgroundColor === 'blue';
