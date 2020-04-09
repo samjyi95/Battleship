@@ -51,7 +51,7 @@ label {
 
 .ship {
     border: 1px solid rgb(0, 252, 29);
-    /* background-color: royalblue; */
+    background-color: royalblue;
     height: 10px;
     width: 10px;
     display: inline-block;

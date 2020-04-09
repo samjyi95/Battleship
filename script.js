@@ -107,6 +107,7 @@ var figureItOutNerd = function (wholeBoard, randomValue) {
         if (boardTile.getAttribute('class') === 'myShip') {
             console.log('hit')
             boardTile.style.backgroundColor = "red"
+            p1Health--
         }
     }
 
@@ -136,7 +137,7 @@ function compGuess() {
     //checkWin();
     
     //
-    checkWin(p1Health);
+    checkWin(p1Health, p2Health);
     //
 }
 
@@ -157,6 +158,7 @@ let gamePlay = () => {
     var onClickShip = function (e) {
         if (e.target.getAttribute('class') === 'ship') {
             e.target.style.backgroundColor = "red"
+            p2Health--
         }
         e.target.removeEventListener('click', onClickShip);
         compGuess();
@@ -173,7 +175,7 @@ let gamePlay = () => {
     //checkWin();
 
     //
-    checkWin(p2Health);
+    checkWin(p1Health, p2Health);
     console.log(p2Health)
     //
 
@@ -279,9 +281,16 @@ let shipPlacements = (sizeOfShip, boards) => {
 
 
 //
-function checkWin (playerHealth) {
-    if (playerHealth === 0) {
-        alert
+function checkWin (p1Health, p2Health) {
+    if (p1Health === 0) {
+        console.log('COMPUTER WINS')
+        
+    }
+    else if (p2Health === 0){
+        console.log('YOU WIN EZ MONEY')
+    }
+    else {
+        console.log('no winna yet')
     }
     
 }
