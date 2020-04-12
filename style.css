@@ -7,6 +7,17 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    color: white;
+    text-align: center;
+
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
 label {
     color: white;
     font-size: large;
@@ -91,4 +102,9 @@ label {
 
 #reset {
     margin-left: 50px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
 }

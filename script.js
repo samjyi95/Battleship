@@ -1,5 +1,6 @@
 var el = document.getElementById('attackBoard');
 var elem = document.getElementById('gameBoard1');
+var msg = document.getElementById('status');
 var turns, interval
 turns = 1;
 
@@ -172,15 +173,11 @@ let gamePlay = () => {
         occupied[i].addEventListener('click', onClickShip);
     }
 
-    //checkWin();
-
     //
     checkWin(p1Health, p2Health);
     console.log(p2Health)
     //
 
-
-    // add the game function that clciks for the computer's guesses 
 
 }
 
@@ -284,10 +281,13 @@ let shipPlacements = (sizeOfShip, boards) => {
 function checkWin (p1Health, p2Health) {
     if (p1Health === 0) {
         console.log('COMPUTER WINS')
-        
+        //innerHTML here for telling the user they lost?
+        msg.innerHTML = 'Ya loseeeeeee'
     }
     else if (p2Health === 0){
         console.log('YOU WIN EZ MONEY')
+        //innerHTML here for telling the player they won?
+        msg.innerHTML = 'EZ MONAYYYY'
     }
     else {
         console.log('no winna yet')
@@ -297,36 +297,12 @@ function checkWin (p1Health, p2Health) {
 //
 
 
-//let checkWin = () => {
-    // var mySpace = document.getElementsByClassName('myShip')
-    // var occupied = document.getElementsByClassName('ship');
-    // var p1Ships = 0 
-    // var p2Ships = 0
-
-    // for (var y = 0; y < shipBoard.length; y++) {
-    //      for(var x = 0; x < shipBoard.length; x++) {
-    //         if (mySpace[y].style.backgroundColor === "red" ) {
-    //             return
-    //         }
-    //         console.log('ya lose')
-    //     }
-    // }
-    // for (var y = 0; y < occupied.length; y++) {
-    //      for(var x = 0; x < occupied.length; x++) {
-    //         console.log(occupied[y])
-    //         if (occupied[y].style.backgroundColor === 'red' ) {
-    //             return
-    //         }
-    //         console.log('ya win')
-    //      }
-    // }
-//}
-
-
 // reset the array to the original position for shipBoard 
 
 var openWater = document.getElementsByClassName('water');
 var occupied = document.getElementsByClassName('ship');
+var missedMe = document.getElementsByClassName('myWater');
+var gotHit = document.getElementsByClassName('myShip');
 document.getElementById('reset').addEventListener('click', () => {
     for (let i = 0; i < openWater.length; i++) {
         openWater[i].style.backgroundColor = "transparent";
@@ -334,5 +310,12 @@ document.getElementById('reset').addEventListener('click', () => {
     for (let i = 0; i < occupied.length; i++) {
         occupied[i].style.backgroundColor = "transparent";
     }
+    for (let i = 0; i < missedMe.length; i++) {
+        missedMe[i].style.backgroundColor = "transparent";
+    }
+    for (let i = 0; i < gotHit.length; i++) {
+        gotHit[i].style.backgroundColor = "transparent";
+    }
+    msg.innerHTML = ''
 })
 
